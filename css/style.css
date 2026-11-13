@@ -1,0 +1,474 @@
+/* FUNDO DO SITE */
+
+body {
+    background-color: #0B0B0B;
+}
+
+.espinhos-direita {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 250px;
+    height: 300px;
+
+    background-image: url(../img/13.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom right;
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+/*CABEÇALHO */
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    min-height: 80px;
+    padding: 0 4%;
+
+    border-bottom: none;
+    position: relative;
+}
+
+.topo::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 4px;
+    right: 0;
+    height: 1px;
+    background-color: var(--bordas);
+}
+
+.nome {
+    margin-left: 35px;
+    color: var(--marfim);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: auto;
+}
+
+nav a {
+    color: var(--cinza-texto);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    transition: color 0.5s ease;
+}
+
+nav a:hover {
+    color: var(--marfim);
+}
+
+.icone-nome {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-left: -24px;
+    vertical-align: -25px;
+}
+
+
+/* SEÇÃO SOBRE MIM */
+
+.sobre {
+    display: grid;
+    position: relative;
+
+    grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(0, 0.9fr);
+
+    grid-template-rows: auto auto;
+
+    column-gap: 80px;
+    row-gap: 35px;
+
+    align-items: start;
+
+    padding: 60px 7%;
+
+    background-color: var(--preto);
+    border-bottom: 1px solid var(--bordas);
+}
+
+
+.sobre::after {
+    content: "";
+    position: absolute;
+    bottom: 38px;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+    background-color: var(--bordas);
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+
+/* COLUNA ESQUERDA — TEXTOS */
+
+.texto-sobre {
+    grid-column: 1;
+    grid-row: 1;
+
+    width: 100%;
+    max-width: none;
+
+    padding-top: 55px;
+}
+
+.numero-secao {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: fit-content;
+    margin-bottom: 15px;
+    color: var(--vermelho);
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.numero-secao > span:first-child {
+    white-space: nowrap;
+    color: var(--vermelho);
+}
+
+.numero-secao > .linha-secao {
+  width: 140px;
+    height: 2px;
+    background: #982A30;
+    clip-path: polygon(0 50%, 12% 0, 88% 0, 100% 50%, 88% 100%, 12% 100%);
+
+}
+
+
+.numero-secao > img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+
+/* TÍTULO PRINCIPAL */
+
+.texto-sobre h2 {
+    margin: 0 0 14px;
+    padding-bottom: 15px;
+
+    color: var(--marfim);
+
+    font-size: clamp(60px, 5.8vw, 100px);
+    line-height: 1.05;
+    font-weight: 400;
+}
+
+
+/* DIVISOR COM ESTRELA */
+
+.divisor {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    gap: 10px;
+}
+
+.divisor span {
+    flex: 1;
+    height: 1px;
+
+    background-color: #982A30;
+    margin-bottom: 15px;
+}
+
+.divisor img {
+    width: 40px;
+    height: auto;
+
+    transform: translateY(-15%);
+}
+
+
+/* PARÁGRAFOS */
+
+.texto-sobre p {
+    max-width: 680px;
+
+    color: var(--cinza-texto);
+
+    font-size: 20px;
+    line-height: 1.35;
+
+    margin-bottom: 12px;
+}
+
+
+/* BOTÃO EXPLORAR PROJETOS */
+
+.link-projeto {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 25px;
+
+    min-width: 275px;
+    min-height: 42px;
+
+    box-sizing: border-box;
+    padding: 5px 11px;
+
+    color: var(--vermelho);
+    background-color: var(--fundo-secundario);
+
+    border: 2px solid var(--vermelho);
+
+    font-size: 14px;
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition:
+        color 0.3s ease
+        background-color 0.3s ease;
+}
+
+.link-projeto:hover {
+    color: var(--marfim);
+    background-color: var(--vermelho);
+}
+
+
+/* COLUNA DIREITA — FOTOGRAFIA */
+
+.imagens-sobre {
+    grid-column: 2;
+    grid-row: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+}
+
+
+/* FOTOGRAFIA */
+
+.foto-com-moldura {
+    position: relative;
+
+    width: 100%;
+    max-width: 420px;
+}
+
+.imagem-sobre-principal {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* MOLDURA GÓTICA */
+
+.foto-com-moldura::after {
+    content: "";
+    position: absolute;
+
+    top: -28px;
+    bottom: -38px;
+    left: -24px;
+    right: -24px;
+
+    background-image: url(../img/2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+/* DETALHE INFERIOR ESQUERDO */
+
+.detalhe {
+    grid-column: 1;
+    grid-row: 2;
+
+    width: 100%;
+    margin: 0;
+
+    text-align: center;
+}
+
+.detalhe p {
+    margin: 0;
+    padding: 8px 0 0;
+
+    color: #e6d8c5;
+    font-size: 12px;
+    letter-spacing: 4px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.tracado {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+}
+
+.tracado::before,
+.tracado::after {
+    content: "";
+
+    flex: 1;
+    height: 1px;
+
+    background-color: #982A30;
+}
+
+.tracado img {
+    display: block;
+
+    width: 35px;
+    height: 35px;
+
+    object-fit: contain;
+}
+
+
+/* DETALHE INFERIOR DIREITO */
+
+.assinatura-foto {
+    grid-column: 2;
+    grid-row: 2;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    width: 100%;
+    height: 35px;
+
+    margin: 0;
+    padding: 0;
+}
+
+.assinatura-foto::before,
+.assinatura-foto::after {
+    content: "";
+
+    flex: 1;
+    height: 1px;
+
+    background-color: #982A30;
+}
+
+.assinatura-foto span {
+    color: #e6d8c5;
+
+    font-size: 20px;
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+}
+
+/* Linha abaixo de "Prazer, sou Marcos Vinicius" */
+.divisor {
+    width: 75%;
+    margin-left: 0;
+    padding: 0;
+}
+
+/* Linha inferior com estrela */
+.tracado {
+    width: 85%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Linhas do M. V. */
+.assinatura-foto {
+    width: 65%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Manter as duas linhas equilibradas */
+.divisor span,
+.tracado::before,
+.tracado::after,
+.assinatura-foto::before,
+.assinatura-foto::after {
+    flex: 1;
+    min-width: 0;
+    clip-path: none;
+}
+
+
+.detalhe {
+    width: 85%;
+    justify-self: start;
+    text-align: center;
+}
+
+.tracado {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Linhas com pontas afinadas */
+
+.divisor span,
+.tracado::before,
+.tracado::after,
+.assinatura-foto::before,
+.assinatura-foto::after, 
+.numero-secao > .linha-secao {
+    height: 2px;
+    background: #982A30;
+    clip-path: polygon(
+        0 50%,
+        12% 0,
+        88% 0,
+        100% 50%,
+        88% 100%,
+        12% 100%
+    );
+}
